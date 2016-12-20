@@ -12,7 +12,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.preprocessing import normalize
 
 
-with open('train_top120.csv', 'r',encoding='utf8') as f:
+with open('train_top10.csv', 'r',encoding='utf8') as f:
     my_list = []
     reader = csv.reader(f)
     for row in reader:
@@ -56,3 +56,4 @@ for i in y_test:
     iteration += 1
 r = binary_p - binary_ytest
 r = np.power(r,2)
+print(np.sum(r))

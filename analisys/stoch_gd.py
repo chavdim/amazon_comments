@@ -10,12 +10,13 @@ from sklearn.linear_model import SGDRegressor
 import numpy as np
 
 
-with open('train_top120.csv', 'r',encoding='utf8') as f:
+with open('train_top60.csv', 'r',encoding='utf8') as f:
     my_list = []
     reader = csv.reader(f)
     for row in reader:
         my_list.append(row)
 data = np.array(my_list)
+
 data = data[1:,] # remove description
 data = data.astype(np.float)
 data = normalize(data, axis=0, norm='l2')
@@ -54,3 +55,4 @@ for i in y_test:
     iteration += 1
 r = binary_p - binary_ytest
 r = np.power(r,2)
+print(np.sum(r))
