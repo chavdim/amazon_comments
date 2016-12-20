@@ -97,24 +97,11 @@ class Webscraper ():
         return pairs
   
         
-    
-#test
+"""EXAMPLE 
 w = Webscraper()
-"""
-with open("comments_html_new.csv",'r',encoding='utf8') as f:
-#with open("main.html",'r',encoding='utf8') as f:
-    text = f.read()
-"""
 w = Webscraper()
 w.getHtml('https://www.amazon.co.jp/product-reviews/B006D87AOM/ref=cm_cr_arp_d_paging_btm_2?ie=UTF8&showViewpoints=1&pageNumber=1')
 r = w.getElementsOfType("span",contains = "review-text" ) 
-t=0
-"""
-for i in w.getDiv():
-    print(i)
-    t+=1
-    if t==100:
-        break
 """
 
   
