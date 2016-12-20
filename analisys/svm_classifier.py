@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Dec 20 20:15:06 2016
+Created on Wed Dec 21 00:28:46 2016
 
 @author: chavdar
 """
 
-from sklearn.ensemble import RandomForestClassifier
+from sklearn import svm
 from sklearn.cross_validation import train_test_split
 from sklearn.preprocessing import normalize
 import numpy as np
-
+import csv
 
 d = str(30)
 with open('train_top'+d+'.csv', 'r',encoding='utf8') as f:
@@ -41,9 +41,10 @@ for i in train_y:
     iteration += 1
 ##
 
-X_train, X_test, y_train, y_test = train_test_split(train_x, binary_train_y, test_size=0.3, random_state=0)
-cls = RandomForestClassifier()
-cls.fit(X_train,y_train)
+X_train, X_test, y_train, y_test = train_test_split(train_x, binary_train_y, test_size=0.01, random_state=0)
+
+cls = svm.SVC()
+cls.fit(X_train, y_train)
 p=cls.predict(X_test)
 s = cls.score(X_test,y_test)
 print(s)
@@ -51,6 +52,7 @@ print(s)
 r = p - y_test
 r = np.power(r,2)
 print("wrong guesses: ",np.sum(r))
+
 ### on data not used for createing bag of words
 with open('test_top'+d+'.csv', 'r',encoding='utf8') as f:
     my_list = []

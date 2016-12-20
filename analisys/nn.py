@@ -11,7 +11,8 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.cross_validation import train_test_split
 from sklearn.preprocessing import normalize
 
-with open('train_top10.csv', 'r',encoding='utf8') as f:
+d = str(30)
+with open('train_top'+d+'.csv', 'r',encoding='utf8') as f:
     my_list = []
     reader = csv.reader(f)
     for row in reader:

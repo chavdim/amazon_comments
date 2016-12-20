@@ -8,9 +8,10 @@ Created on Tue Dec 20 16:40:21 2016
 
 from sklearn.linear_model import SGDRegressor
 import numpy as np
+import csv
 
-
-with open('train_top60.csv', 'r',encoding='utf8') as f:
+d = str(30)
+with open('train_top'+d+'.csv', 'r',encoding='utf8') as f:
     my_list = []
     reader = csv.reader(f)
     for row in reader:

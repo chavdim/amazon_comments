@@ -11,8 +11,8 @@ import numpy as np
 import csv
 
 
-
-with open('train_top300.csv', 'r',encoding='utf8') as f:
+d = str(30)
+with open('train_top'+d+'.csv', 'r',encoding='utf8') as f:
     my_list = []
     reader = csv.reader(f)
     for row in reader:
@@ -50,7 +50,7 @@ print(scores)
 #
 #test data
 #
-with open('test_top300.csv', 'r',encoding='utf8') as f:
+with open('test_top'+d+'.csv', 'r',encoding='utf8') as f:
     my_list = []
     reader = csv.reader(f)
     for row in reader:
